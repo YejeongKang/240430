@@ -23,10 +23,10 @@ int main() {
 }
 
 string isNum() {
-	bool isd;
+	bool isd = 0;
 
 	// 문자열 입력받기
-	do {
+	while(isd == 0){
 		string str;
 		cin >> str;
 
@@ -45,5 +45,5 @@ string isNum() {
 				}
 			}
 		}
-	} while (isd == 0);
+	} 
 }
