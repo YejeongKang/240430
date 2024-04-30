@@ -17,5 +17,5 @@ int main()
     // a가 나올 때까지 입력 받고, 엔터 상관없이 a 이전까지 입력한 모든 값을 출력함.
     cout << str << endl;
 
-    .at(index)
+    //str.at(index);
 }

@@ -3,18 +3,17 @@
 
 using namespace std;
 
-void isNum(string str);
+string isNum();
 
 int main() {
 	string str1, str2;
 
-
 	// 1)
-	cout << "숫자로 이루어진 문자열을 2 개 입력하시오. : ";
-	cin >> str1 >> str2;
+	cout << "숫자로 이루어진 문자열을 입력하시오. : ";
+	str1 = isNum();
 
-	isNum(str1);
-	isNum(str2);
+	cout << "숫자로 이루어진 문자열을 입력하시오. : ";
+	str2 = isNum();
 
 	// 2)
 	cout << str1 + str2 << endl;
@@ -23,17 +22,28 @@ int main() {
 	cout << to_string(stoi(str1) + stoi(str2)) << endl;
 }
 
-void isNum(string str) {
+string isNum() {
+	bool isd;
 
-	for (int i = 0; i < str.length(); i++) {
+	// 문자열 입력받기
+	do {
+		string str;
+		cin >> str;
 
-		if (isdigit(str[i]) == 0) {
-			cout << "NO" << endl;
-			break;
+		for (int i = 0; i < str.length(); i++) {
+
+			if (isdigit(str[i]) == 0) {
+				isd = 0; 
+				cout << "입력하신 문자열은 " << str << endl << "NO" << endl << "숫자로만 이루어진 문자열을 입력하시오. : ";
+				break;
+			}
+			else {
+				isd = 1;
+				if (i == str.length() - 1) {
+					cout << "입력하신 문자열은 " << str << endl << "OK" << endl;
+					return str;
+				}
+			}
 		}
-		else {
-			if (i == str.length() - 1) cout << "OK" << endl;
-			else continue;
-		}
-	}
+	} while (isd == 0);
 }
