@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 #define FIND_STR 'ding'
@@ -24,7 +25,7 @@ int main() {
 	cout << s << endl;
 
 	// "con"이 되도록 문자열 변경
-	s.erase(2, 5);
+	s.erase(unique(s.begin(), s.end()),s.end());
 
 	cout << s << endl;
 
